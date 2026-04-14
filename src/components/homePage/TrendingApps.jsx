@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import HomePageCard from "../../assets/Ui/HomePageCard/HomePageCard";
 import { HashLoader } from "react-spinners";
+import UseApps from "../../Hooks/UseApps";
 // import { useLoaderData } from "react-router";
 
 // we have 3 way to fetch the api data
@@ -13,25 +14,13 @@ import { HashLoader } from "react-spinners";
 // way 3: use useEffect with useState then use that
 
 const TrendingApps = () => {
-  const [apps, setApps] = useState([]);
-  const [spinner, setSpinner] = useState(true);
   // const apps = use(promisApps);
   // console.log(apps, "way 1");
 
   // const apps = useLoaderData();
   // console.log(apps, 'way 2');
-
-  useEffect(() => {
-    const fetchApps = async () => {
-      const res = await fetch("/data.json");
-      const data = await res.json();
-      //   console.log(data, "way 3");
-      setApps(data);
-      setSpinner(false);
-    };
-    fetchApps();
-  }, []);
-
+  
+  const {apps, spinner} = UseApps();
   console.log(apps, "way 3 out of useEffect");
 
   return (

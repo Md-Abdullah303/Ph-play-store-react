@@ -1,12 +1,13 @@
 import React from "react";
 import DownloadImg from "../../images/icon-downloads.png";
 import RatingImg from "../../images/icon-ratings.png";
+import { NavLink } from "react-router";
 
 const HomePageCard = ({ app }) => {
   //   console.log(app);
   const { image, title, downloads, ratingAvg } = app;
   return (
-    <div className="card bg-base-100 shadow-sm">
+    <NavLink to={`/apps/${app.id}`} className="card bg-base-100 shadow-sm">
       <figure>
         <img className="h-40 p-3" src={image} alt={title} />
       </figure>
@@ -23,7 +24,7 @@ const HomePageCard = ({ app }) => {
           </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import HomePageCard from "../../assets/Ui/HomePageCard/HomePageCard";
+import { HashLoader } from "react-spinners";
 // import { useLoaderData } from "react-router";
 
 // we have 3 way to fetch the api data
@@ -13,6 +14,7 @@ import HomePageCard from "../../assets/Ui/HomePageCard/HomePageCard";
 
 const TrendingApps = () => {
   const [apps, setApps] = useState([]);
+  const [spinner, setSpinner] = useState(true);
   // const apps = use(promisApps);
   // console.log(apps, "way 1");
 
@@ -25,6 +27,7 @@ const TrendingApps = () => {
       const data = await res.json();
       //   console.log(data, "way 3");
       setApps(data);
+      setSpinner(false);
     };
     fetchApps();
   }, []);
@@ -47,11 +50,17 @@ const TrendingApps = () => {
 
       <div className="">
         <h2 className="text-left font-bold">Apps: {apps.length}</h2>
-        <div className="grid px-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 mt-5">
-          {apps.map((app, index) => (
-            <HomePageCard key={index} app={app}></HomePageCard>
-          ))}
-        </div>
+        {spinner ? (
+          <div className="mx-auto w-fit my-40">
+            <HashLoader color="#ad46ff" />
+          </div>
+        ) : (
+          <div className="grid px-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 mt-5">
+            {apps.slice(0,8).map((app, index) => (
+              <HomePageCard key={index} app={app}></HomePageCard>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

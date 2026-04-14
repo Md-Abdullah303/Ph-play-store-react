@@ -51,6 +51,7 @@ const Nevber = () => {
             <MyNavlinkNormal to={"/"}>Home</MyNavlinkNormal>
             <MyNavlinkNormal to={"/apps"}>Apps</MyNavlinkNormal>
             <MyNavlinkNormal to={"/installed"}>Installation</MyNavlinkNormal>
+            <MyNavlinkNormal to={"/dashboard"}>Dashborad</MyNavlinkNormal>
           </ul>
         </div>
         <div className="navbar-end">

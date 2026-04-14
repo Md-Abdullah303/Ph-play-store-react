@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use } from "react";
 import UseApps from "../../Hooks/UseApps";
 import { useParams } from "react-router";
 import { HashLoader } from "react-spinners";
@@ -6,6 +6,7 @@ import downloadImg from '../../assets/images/icon-downloads.png'
 import ratingImg from '../../assets/images/icon-ratings.png'
 import reviewImg from '../../assets/images/icon-review.png'
 import Rating from "../../components/Rating/Rating";
+import { InstallAppsContext } from "../../context/InstallContextProvider";
 
 const AppDetails = () => {
   const { apps, spinner } = UseApps();
@@ -25,6 +26,9 @@ const AppDetails = () => {
     );
   }
 
+  const {installedApp, setInstalledApp} = use(InstallAppsContext);
+  // console.log(contextData);
+
   const {
     title,
     size,
@@ -36,6 +40,15 @@ const AppDetails = () => {
     description,
     companyName,
   } = expectedApp;
+
+  const handleInstallApp = ()=>{
+    const isExist = installedApp.find(app=> app.id == expectedApp.id)
+    if(!isExist){
+      setInstalledApp([...installedApp, expectedApp]);
+    }
+  };
+  
+  console.log(installedApp);
 
   return (
     <div className="container mx-auto">
@@ -64,7 +77,7 @@ const AppDetails = () => {
               <h2>{reviews}</h2>
             </div>
           </div>
-          <button className="btn btn-success text-white">Install Now ({size} MB)</button>
+          <button onClick={()=> handleInstallApp()} className="btn btn-success text-white">Install Now ({size} MB)</button>
         </div>
       </div>
       <Rating ratings={ratings}></Rating>

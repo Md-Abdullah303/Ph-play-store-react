@@ -2,7 +2,7 @@ import React from 'react';
 import { Bar, BarChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 const Rating = ({ratings}) => {
-    console.log(ratings);
+    // console.log(ratings);
     return (
         <div className='m-10'>
             <h1>Rating</h1>

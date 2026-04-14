@@ -52,11 +52,11 @@ const AppDetails = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="flex items-center bg-base-200 py-5 my-10 rounded-xl gap-10">
-        <div className="w-150 flex items-center justify-center">
+      <div className="flex flex-col sm:flex-row items-center bg-base-200 py-5 my-10 rounded-xl gap-4 sm:gap-10">
+        <div className="w-50 sm:w-150 flex items-center justify-center">
           <img className="w-full rounded-lg" src={image} alt={title} />
         </div>
-        <div className="space-y-3.5 w-full">
+        <div className="flex flex-col px-5 sm:px-2 sm:items-start  gap-3.5 w-full">
           <h1 className="text-5xl font-bold">{title}</h1>
           <p className="text-gray-400 text-lg">Developed by <span className="primary-linear text-transparent bg-clip-text font-semibold">{companyName}</span></p>
           <hr className="text-gray-600 py-2"/>
@@ -82,7 +82,7 @@ const AppDetails = () => {
       </div>
       <Rating ratings={ratings}></Rating>
       <div className="">
-        <p className="text-lg w-[70%] mx-auto"><span className="text-xl font-bold">Description:</span> <br />{description}</p>
+        <p className="text-lg w-[90%] sm:w-[70%] mx-auto"><span className="text-xl font-bold">Description:</span> <br />{description}</p>
       </div>
     </div>
   );

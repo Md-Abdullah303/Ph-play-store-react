@@ -26,10 +26,10 @@ const TrendingApps = () => {
   return (
     <div className="mt-5 sm:mt-10 container mx-auto">
       <div className="text-center py-5 space-y-4 ">
-        <h1 className="text-5xl font-bold primary-linear text-transparent bg-clip-text">
+        <h1 className="text-3xl sm:text-5xl font-bold primary-linear text-transparent bg-clip-text">
           Tending Apps
         </h1>
-        <p className="text-gray-400 mx-auto text-lg w-[50%]">
+        <p className="text-gray-400 mx-auto text-lg w-[90%] sm:w-[50%]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Necessitatibus reprehenderit id, corrupti doloribus quasi magni
           perspiciatis distinctio, dicta ipsam, nesciunt nobis magnam
@@ -38,7 +38,7 @@ const TrendingApps = () => {
       </div>
 
       <div className="">
-        <h2 className="text-left font-bold">Apps: {apps.length}</h2>
+        <h2 className="text-center container mx-auto sm:text-left font-bold">Apps: {apps.length}</h2>
         {spinner ? (
           <div className="mx-auto w-fit my-40">
             <HashLoader color="#ad46ff" />

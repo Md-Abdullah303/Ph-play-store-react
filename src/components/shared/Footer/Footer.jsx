@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#001931] mt-10 py-10 ">
       <div className="container  text-white mx-auto">
-        <div className="flex items-center justify-between gap-5">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-2 ">
             <img className="w-7" src={footerImg} alt="footerImg" />
             <h1 className="font-bold">HERO .IO</h1>
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
         <hr className="text-gray-400 my-3" />
-        <p className="text-gray-500 text-center">Copyright @ 2025 - All right reserved</p>
+        <p className="text-gray-500 text-[11px] md:text-lg text-center">Copyright @ 2025 - All right reserved</p>
       </div>
     </footer>
   );

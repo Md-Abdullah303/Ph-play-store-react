@@ -4,11 +4,11 @@ import { Bar, BarChart, Tooltip, XAxis, YAxis } from 'recharts';
 const Rating = ({ratings}) => {
     // console.log(ratings);
     return (
-        <div className='m-10'>
+        <div className='m-10 flex flex-col items-start gap-4'>
             <h1>Rating</h1>
             <div className="">
                 <BarChart
-                width={500}
+                width={`w-full`}
                 height={300}
                 data={ratings}
                 >

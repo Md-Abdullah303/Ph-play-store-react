@@ -39,9 +39,9 @@ const Nevber = () => {
               </MyNavlinkSideBar>
             </ul>
           </div>
-          <NavLink to={"/"} className={"flex items-center ml-3 gap-2"}>
-            <img className="w-10" src={LogoImg} alt="nav logo" />
-            <h1 className="text-2xl font-bold primary-linear text-transparent bg-clip-text">
+          <NavLink to={"/"} className={"flex items-center sm:ml-3 gap-1 sm:gap-2"}>
+            <img className="w-5 sm:w-10" src={LogoImg} alt="nav logo" />
+            <h1 className="text-[14px] sm:text-2xl font-bold primary-linear text-transparent bg-clip-text">
               HERO .IO
             </h1>
           </NavLink>
@@ -55,7 +55,7 @@ const Nevber = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <button className="btn primary-linear text-white border-none">
+          <button className="btn primary-linear text-[12px] sm:text-[16px] text-white border-none">
             <FaGithub /> Contribute
           </button>
         </div>

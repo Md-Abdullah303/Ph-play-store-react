@@ -2,10 +2,12 @@ import React from "react";
 import LogoImg from "../../../assets/images/logo.png";
 import { NavLink } from "react-router";
 import { FaGithub } from "react-icons/fa";
+import MyNavlinkNormal from "../MyNavlinkNorma/MyNavlinkNorma";
+import MyNavlinkSideBar from "../MyNavlinkSideBar/MyNavlinkSideBar";
 
 const Nevber = () => {
   return (
-    <nav className="bg-base-100 shadow-sm">
+    <nav className="bg-base-100 z-50 sticky top-0 shadow-sm">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -30,30 +32,11 @@ const Nevber = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 space-y-3 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <NavLink
-                className={({ isActive }) =>
-                  `${isActive && "primary-linear text-transparent bg-clip-text"}`
-                }
-                to={"/"}
-              >
-                Home
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `${isActive && "primary-linear text-transparent bg-clip-text"}`
-                }
-                to={"/apps"}
-              >
-                Apps
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `${isActive && "primary-linear text-transparent bg-clip-text"}`
-                }
-                to={"/installed"}
-              >
+              <MyNavlinkSideBar to={"/"}>Home</MyNavlinkSideBar>
+              <MyNavlinkSideBar to={"/apps"}>Apps</MyNavlinkSideBar>
+              <MyNavlinkSideBar to={"/installed"}>
                 Installation
-              </NavLink>
+              </MyNavlinkSideBar>
             </ul>
           </div>
           <NavLink to={"/"} className={"flex items-center ml-3 gap-2"}>
@@ -65,30 +48,9 @@ const Nevber = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu space-x-5 text-lg menu-horizontal px-1">
-            <NavLink
-              className={({ isActive }) =>
-                `${isActive && "primary-linear text-transparent bg-clip-text border-b border-primary"}`
-              }
-              to={"/"}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${isActive && "primary-linear text-transparent bg-clip-text border-b border-primary"}`
-              }
-              to={"/apps"}
-            >
-              Apps
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `${isActive && "primary-linear text-transparent bg-clip-text border-b border-primary"}`
-              }
-              to={"/installed"}
-            >
-              Installation
-            </NavLink>
+            <MyNavlinkNormal to={"/"}>Home</MyNavlinkNormal>
+            <MyNavlinkNormal to={"/apps"}>Apps</MyNavlinkNormal>
+            <MyNavlinkNormal to={"/installed"}>Installation</MyNavlinkNormal>
           </ul>
         </div>
         <div className="navbar-end">

@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.primary-linear{
+    @apply bg-linear-to-r from-[#632EE3] to-[#9F62F2];
+}

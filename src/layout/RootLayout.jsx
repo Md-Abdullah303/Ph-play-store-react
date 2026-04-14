@@ -1,14 +1,15 @@
-import React from 'react';
-import { Outlet } from 'react-router';
+import React from "react";
+import { Outlet } from "react-router";
+import Nevber from "../components/shared/Navber/Navber";
 
 const RootLayout = () => {
-    return (
-        <div>
-            <h1 className=''>navber</h1>
-            <Outlet></Outlet>
-            <h1>footer</h1>
-        </div>
-    );
+  return (
+    <div>
+      <Nevber></Nevber>
+      <Outlet></Outlet>
+      <h1>footer</h1>
+    </div>
+  );
 };
 
 export default RootLayout;
